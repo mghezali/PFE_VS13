@@ -11,7 +11,6 @@ namespace Injection_Sponsoring_FE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

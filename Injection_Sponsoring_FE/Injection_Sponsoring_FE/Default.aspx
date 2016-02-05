@@ -39,21 +39,20 @@
                      </div>
               <hr />
                     <div class="form-group">
-                         <label class="col-lg-2 control-label">Radios</label>
-                              <div class="col-md-10">
-                                <div class="radio">
-                                  <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                    Saisir
-                                  </label>
-                                </div>
-                                <div class="radio">
-                                  <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Charger EXCEL
-                                  </label>
-                                </div>
-                              </div>
+                        <asp:Label runat="server" ID="myLabel" CssClass="col-lg-2 control-label">My label</asp:Label>
+                        <div class="col-md-10">
+                            <div class="radio">
+                                <label>
+                                    <asp:RadioButtonList ID="typeSaisie" runat="server" RepeatDirection="Vertical" RepeatLayout="Table">
+                                        <asp:ListItem Text="Saisir" Selected="True" Value="saisie"></asp:ListItem>
+                                        <asp:ListItem Text="Charger&nbsp;Excel" Value="excel"></asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:FileUpload CssClass="btn btn-default" runat="server" Text="Upload"></asp:FileUpload>
+                        </div>
                     </div>
                      <hr />
                     <table class="table table-striped table-hover ">
