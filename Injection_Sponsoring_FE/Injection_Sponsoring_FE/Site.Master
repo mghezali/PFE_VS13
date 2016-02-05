@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Injection_Sponsoring_FE.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InjectionFE.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -38,26 +38,35 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      
+            <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                <div class="navbar-header">                  
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                   </button>
+                      <a class="navbar-brand" href="#">LOGO</a>                 
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/">Commande</a></li>
+                        <li><a runat="server" href="~/About">Reporting</a></li>
+                        <li><a runat="server" href="~/Contact">Stats</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Actions avancées <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Activation</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Migration</a></li>                            
+                          </ul>
+                        </li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                            <ul class="nav navbar-nav navbar-right">                             
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -71,8 +80,9 @@
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
-            </div>
-        </div>
+              </div>
+            </nav>
+     
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

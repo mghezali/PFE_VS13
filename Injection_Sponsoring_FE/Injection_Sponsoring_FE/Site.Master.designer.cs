@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Injection_Sponsoring_FE {
+namespace InjectionFE {
     
     
     public partial class SiteMaster {
