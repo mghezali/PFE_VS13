@@ -51,7 +51,9 @@
                             </div>
                         </div>
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:FileUpload CssClass="btn btn-default" runat="server" Text="Upload"></asp:FileUpload>
+                            <asp:FileUpload runat="server" Text="Upload" ID="uploadFile" OnLoad="uploadFile_Load"></asp:FileUpload>
+                            <asp:Button ID="uploadButton" runat="server" Text="Upload" OnClick="uploadButton_Click" />
+                            <asp:GridView ID="gridView" runat="server" OnPageIndexChanging="gridView_PageIndexChanging" AllowPaging="true"  ></asp:GridView>
                         </div>
                     </div>
                      <hr />
