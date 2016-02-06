@@ -53,10 +53,11 @@
                         <div class="col-md-offset-2 col-md-10">
                             <asp:FileUpload runat="server" Text="Upload" ID="uploadFile" OnLoad="uploadFile_Load"></asp:FileUpload>
                             <asp:Button ID="uploadButton" runat="server" Text="Upload" OnClick="uploadButton_Click" />
-                            <asp:GridView ID="gridView" runat="server" OnPageIndexChanging="gridView_PageIndexChanging" AllowPaging="true"  ></asp:GridView>
+                           
                         </div>
                     </div>
                      <hr />
+                     <asp:GridView ID="gridView" runat="server" CssClass="table table-striped table-bordered table-hover" OnPageIndexChanging="gridView_PageIndexChanging" AllowPaging="true"  ></asp:GridView>
                     <table class="table table-striped table-hover ">
                           <thead>
                             <tr>
