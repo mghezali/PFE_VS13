@@ -3,7 +3,44 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
-    <p>Use this area to provide additional information.</p>
-    <p>Use this area to provide additional information.</p>
+   
+
+
+      <div class="col-md-8">
+            <section>
+                <div class="form-horizontal">
+             
+                     <div class="form-group">
+                        <Label class="col-md-2 control-label">ID Commande</Label>
+                        <div class="col-md-6">
+                            <input class="form-control"/>                           
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <Label class="col-md-2 control-label">Description</Label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" rows="3"></textarea>                   
+                        </div>
+                     </div>
+
+                  <hr />
+                     <div class="form-group">
+                        <Label class="col-md-2 control-label">Date Début</Label>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control"/>                           
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <Label class="col-md-2 control-label">Date fin</Label>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control"/>                           
+                        </div>
+                     </div>
+              <hr />
+
+                    </div>
+                </section>
+                </div>
 </asp:Content>
