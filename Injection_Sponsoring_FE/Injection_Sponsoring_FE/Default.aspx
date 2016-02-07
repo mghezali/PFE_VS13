@@ -105,7 +105,7 @@
                     </asp:GridView>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" Text="Annuler" CssClass="btn btn-danger" />
+                            <asp:Button runat="server" Text="Annuler" CssClass="btn btn-default" />
                             <asp:Button runat="server" OnClick="launch" Text="Lancer" CssClass="btn btn-danger" />
                         </div>
                     </div>
