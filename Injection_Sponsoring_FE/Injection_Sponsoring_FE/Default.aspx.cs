@@ -13,13 +13,15 @@ namespace Injection_Sponsoring_FE
 {
     public partial class _Default : Page
     {
+        private bool isEditMode = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }
 
         protected void uploadFile_Load(object sender, EventArgs e)
         {
-
+            //ClientScript.RegisterStartupScript(this.GetType(), "my alert", "alert(' ');", true);
         }
 
         protected void gridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -86,5 +88,7 @@ namespace Injection_Sponsoring_FE
             con.Close();
             return excelSheetNames;
         }
+
+        
     }
 }

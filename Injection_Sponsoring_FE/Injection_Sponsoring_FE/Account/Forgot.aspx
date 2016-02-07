@@ -4,7 +4,7 @@
     <h2><%: Title %>.</h2>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-15">
             <asp:PlaceHolder id="loginForm" runat="server">
                 <div class="form-horizontal">
                     <h4>Forgot your password?</h4>

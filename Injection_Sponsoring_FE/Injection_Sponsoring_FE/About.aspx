@@ -6,7 +6,7 @@
    
 
 
-      <div class="col-md-8">
+      <div class="col-md-15">
             <section>
                 <div class="form-horizontal">
              
@@ -19,7 +19,7 @@
 
                      <div class="form-group">
                         <Label class="col-md-2 control-label">Description</Label>
-                        <div class="col-md-8">
+                        <div class="col-md-15">
                             <textarea class="form-control" rows="3"></textarea>                   
                         </div>
                      </div>

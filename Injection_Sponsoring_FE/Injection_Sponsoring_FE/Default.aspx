@@ -5,21 +5,21 @@
  <h4><%: Title %>.</h4>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-30">
             <section>
                 <div class="form-horizontal">
              
                      <div class="form-group">
                         <Label class="col-md-2 control-label">ID Commande</Label>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <input class="form-control"/>                           
                         </div>
                      </div>
 
                      <div class="form-group">
                         <Label class="col-md-2 control-label">Description</Label>
-                        <div class="col-md-8">
-                            <textarea class="form-control" rows="3"></textarea>                   
+                        <div class="col-md-4">
+                            <textarea class="form-control" rows="2"></textarea>                   
                         </div>
                      </div>
 
@@ -57,39 +57,16 @@
                         </div>
                     </div>
                      <hr />
-                     <asp:GridView ID="gridView" runat="server" CssClass="table table-striped table-bordered table-hover" OnPageIndexChanging="gridView_PageIndexChanging" AllowPaging="true"  ></asp:GridView>
-                    <table class="table table-striped table-hover ">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>Column heading</th>
-                              <th>Column heading</th>
-                              <th>Column heading</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                               <tr>
-                              <td>2</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                            
-                            
-                          </tbody>
-                        </table> 
+                     <asp:GridView ID="gridView" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                         OnPageIndexChanging="gridView_PageIndexChanging">
+                         <Columns>
+                             <asp:TemplateField HeaderText="Colonne 1" InsertVisible="true">
+                                 <ItemTemplate>
+                                     <asp:TextBox ID="TextBoxColonne1" runat="server" Visible="true" Text='<%# Bind("Afifa") %>'></asp:TextBox>
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                     </asp:GridView> 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                              <button type="reset" class="btn btn-default">Annuler</button>
