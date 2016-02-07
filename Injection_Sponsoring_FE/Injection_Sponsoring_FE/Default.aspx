@@ -5,41 +5,77 @@
  <h4><%: Title %>.</h4>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <section>
                 <div class="form-horizontal">
              
                      <div class="form-group">
-                        <Label class="col-md-2 control-label">ID Commande</Label>
-                        <div class="col-md-6">
+                        <Label class="col-md-4 control-label">ID Commande</Label>
+                        <div class="col-md-4">
                             <input class="form-control"/>                           
                         </div>
                      </div>
-
+                   
                      <div class="form-group">
-                        <Label class="col-md-2 control-label">Description</Label>
-                        <div class="col-md-8">
+                        <Label class="col-md-4 control-label">Description</Label>
+                        <div class="col-md-6">
                             <textarea class="form-control" rows="3"></textarea>                   
                         </div>
                      </div>
 
-                  <hr />
-                     <div class="form-group">
-                        <Label class="col-md-2 control-label">Date Début</Label>
-                        <div class="col-md-4">
-                            <input type="date" class="form-control"/>                           
-                        </div>
-                     </div>
+                  </div>
+            </section>
+        </div>
 
-                     <div class="form-group">
-                        <Label class="col-md-2 control-label">Date fin</Label>
-                        <div class="col-md-4">
-                            <input type="date" class="form-control"/>                           
-                        </div>
-                     </div>
-              <hr />
+      
+
+        <div class="col-md-6">
+            <section>
+                <div class="form-horizontal">
                     <div class="form-group">
-                        <asp:Label runat="server" ID="myLabel" CssClass="col-lg-2 control-label">My label</asp:Label>
+                    <asp:Label runat="server" AssociatedControlID="Dated" CssClass="col-md-2 control-label">Date début</asp:Label>
+                    <div class="col-md-6">
+                        <asp:TextBox runat="server" ID="Dated" CssClass="form-control" TextMode="Date" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Dated"
+                            CssClass="text-danger" ErrorMessage="The date field is required." />
+                        <asp:CompareValidator runat="server"
+                            ID="CompareValidator1"
+                            ControlToValidate="Dated"
+                            CssClass="text-danger"
+                            ErrorMessage="The date must be on or after current date"
+                            Operator="GreaterThanEqual"
+                            Type="Date"></asp:CompareValidator>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="Datef" CssClass="col-md-2 control-label">Date fin</asp:Label>
+                    <div class="col-md-6">
+                        <asp:TextBox runat="server" ID="Datef" CssClass="form-control" TextMode="Date" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Datef"
+                            CssClass="text-danger" ErrorMessage="The date field is required." />
+                        <asp:CompareValidator runat="server"
+                            ID="CompareValidator2"
+                            ControlToCompare="DateD"
+                            ControlToValidate="Datef"
+                            CssClass="text-danger"
+                            ErrorMessage="The expiry date must be on or after start date"
+                            Operator="GreaterThanEqual"
+                            Type="Date"></asp:CompareValidator>
+
+                    </div>
+                </div>
+               
+              </div>
+                </section>
+            </div>
+
+        <hr />
+        <div class="col-md-10">
+            <section>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <asp:Label runat="server" ID="myLabel" CssClass="col-lg-2 control-label">Action</asp:Label>
                         <div class="col-md-10">
                             <div class="radio">
                                 <label>
@@ -56,53 +92,25 @@
                            
                         </div>
                     </div>
-                     <hr />
-                     <asp:GridView ID="gridView" runat="server" CssClass="table table-striped table-bordered table-hover" OnPageIndexChanging="gridView_PageIndexChanging" AllowPaging="true"  ></asp:GridView>
-                    <table class="table table-striped table-hover ">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>Column heading</th>
-                              <th>Column heading</th>
-                              <th>Column heading</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                               <tr>
-                              <td>2</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                              <td>Column content</td>
-                            </tr>
-                            
-                            
-                          </tbody>
-                        </table> 
+                    
+                     <asp:GridView ID="gridView" runat="server" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                         OnPageIndexChanging="gridView_PageIndexChanging">
+                         <Columns>
+                             <asp:TemplateField HeaderText="Colonne 1" InsertVisible="true">
+                                 <ItemTemplate>
+                                     <asp:TextBox ID="TextBoxColonne1" runat="server" Visible="true" Text='<%# Bind("Afifa") %>'></asp:TextBox>
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                     </asp:GridView> 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                             <button type="reset" class="btn btn-default">Annuler</button>
-                             <button type="submit" class="btn btn-danger">Lancer</button>
+                            <asp:Button runat="server" Text="Annuler" CssClass="btn btn-danger" />
+                                 <asp:Button runat="server" OnClick="launch" Text="Lancer" CssClass="btn btn-danger" />
                         </div>
                     </div>
                 </div>
               
-                <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
-                </p>
             </section>
         </div>
         

@@ -13,7 +13,7 @@ namespace Injection_Sponsoring_FE
         protected void Page_Load(object sender, EventArgs e)
         {
             CompareValidator1.ValueToCompare = DateTime.Now.ToShortDateString();
-            LabelMessage.Text = "";
+           
         }
 
 
@@ -21,8 +21,7 @@ namespace Injection_Sponsoring_FE
         {
             if (Page.IsValid)
             {
-                LabelMessage.Text = "Your reservation has been processed.";
-
+                
                 
 
             }
